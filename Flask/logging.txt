@@ -1,0 +1,3 @@
+2018-12-31 00:58:20,683 ERROR    [4.DebugMode.py:25] string index out of range
+2018-12-31 01:00:40,309 ERROR    [4.DebugMode.py:25] string index out of range
+2018-12-31 01:00:45,638 ERROR    [4.DebugMode.py:25] string index out of range

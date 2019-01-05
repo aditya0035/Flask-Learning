@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>InfomationForm</h1>
+    <p>Please provide below Information</p>
+    <form  method="POST">
+      {{form.hidden_tag()}}
+      <br>
+      {{form.breed.label}}{{form.breed}}
+      <br>
+      {{form.neatued.label}}{{form.neatued}}
+      <br>
+      {{form.mood.label}}{{form.mood}}
+      <br>
+      {{form.food.label}}{{form.food}}
+      <br>
+      {{form.feedBack.label}}{{form.feedBack}}
+      <br>
+      {{form.submit()}}
+    </form>
+  </body>
+</html>

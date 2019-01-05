@@ -1,0 +1,11 @@
+{%extends "basic12.html"%}
+{%block content%}
+{%if len(rulesNotObey)!=0%}
+<h3>below are rules not followed</h3>
+<ul>
+  {%for rule in rulesNotObey%}
+  <li>{{rule}}</li>
+  {%endfor%}
+</ul>
+{%endif%}
+{%endblock%}

@@ -1,0 +1,8 @@
+{%extends "basic10.html" %}
+{%block content%}
+<ul>
+  {%for name in names_list%}
+  <li>{{UpperCase(name|CustomFilter)}}</li>
+  {%endfor%}
+</ul>
+{%endblock%}

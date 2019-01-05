@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <ul>
+      <li><a href="{{url_for("home")}}">Home</a></li>
+    </ul>
+    {% if current_user.is_authenticated %}
+    <li><a href="{{url_for("Logout")}}">Logout</a></li>
+    {% else %}
+    <li><a href="{{url_for("LoginVw")}}">Login</a></li>
+    <li><a href="{{url_for("Registration")}}">Register</a></li>
+    {% endif %}
+    {%block content%}
+    {%endblock%}
+  </body>
+</html>

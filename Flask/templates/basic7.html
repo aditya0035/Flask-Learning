@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>Basic Template</title>
+</head>
+<body>
+<ul>
+  {%for puppy in puppy_list%}
+  {%if puppy.name.startswith('J')%}
+  <li>{{'name:{0},age:{1}'.format(puppy.name,puppy.age)}}</li>
+  {%elif puppy.name.startswith('A') %}
+  <li>{{'name:{0},age:{1}'.format(puppy.name,puppy.age)}}</li>
+  {%endif%}
+  {%endfor%}
+</ul>
+</body>
+</html>

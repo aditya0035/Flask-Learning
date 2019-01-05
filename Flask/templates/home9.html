@@ -1,0 +1,8 @@
+{%extends "basic9.html" %}
+{%block content%}
+<ul>
+  {%for name in names_list%}
+  <li>{{name|capitalize}}</li>
+  {%endfor%}
+</ul>
+{%endblock%}

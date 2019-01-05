@@ -1,0 +1,14 @@
+{%extends "basic12.html"%}
+{%block content%}
+<h3>Below are the rules need to be follow</h3>
+<ul>
+  {%for rule in rules%}
+  <li>{{rule}}</li>
+  {%endfor%}
+</ul>
+<form  action="{{url_for('SaveUserName')}}">
+   <label for="username">username:</label>
+   <input type="text" name="username" />
+   <button type="submit" name="submit">Submit</button>
+</form>
+{%endblock%}
