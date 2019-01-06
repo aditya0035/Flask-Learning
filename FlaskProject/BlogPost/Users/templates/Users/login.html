@@ -1,0 +1,49 @@
+{%extends "index.html"%}
+{%block content%}
+<!-- Modal -->
+{%if form.Email.errors or form.Password.errors%}
+<div class="alert alert-danger col-sm-12 col-md-10 col-md-offset-1">
+  <ul>
+  {%if form.Email.errors%}
+  {%for error in form.Email.errors%}
+  <li>{{error}}</li>
+  {%endfor%}
+  {%endif%}
+  {%if form.Password.errors%}
+  {%for error in form.Password.errors%}
+  <li>{{error}}</li>
+  {%endfor%}
+  {%endif%}
+  <ul>
+</div>
+{%endif%}
+<div class="container d-flex p-2">
+  <div class="row">
+    <div class="Absolute-Center is-Responsive">
+      <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <form method="POST">
+          {{form.hidden_tag()}}
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            {{form.Email(class="form-control",placeholder="xyz@gmail.com")}}
+          </div>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            {{form.Password(class="form-control")}}
+          </div>
+            <div class="form-check">
+              {{form.RememberMe(class="form-check-input")}}
+              <label class="form-check-label" for="RememberMe">Remember Me</label>
+            </div>
+          <div class="form-group">
+            {{form.Submit(class="btn btn-primary btn-lg btn-block")}}
+          </div>
+          <div class="form-group text-center">
+            <a href="#">Forgot Password</a>&nbsp;|&nbsp;<a href="#">Support</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{%endblock%}

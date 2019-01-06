@@ -1,0 +1,49 @@
+{%extends "index.html"%}
+{%block content%}
+{%if posts %}
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Created By</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for post in posts%}
+    <tr>
+    <td scope="col">
+       {{post.Title}}
+        </td>
+      <td scope="col" title="{{post.Description}}">
+        {{post.Description|CharacterLimit}}
+      </td>
+      <td scope="col">
+       {{post.User.Email}}
+      </td>
+    <td scope="col">
+        <a  class="btn btn-dark"href="{{url_for('post.ViewPost',postId=post.Id)}}">View Post</a>
+    </td>
+    </tr>
+    {%endfor%}
+  </tbody>
+  <tbody>
+  </table>
+<div class="container">
+  <ul class="pagination">
+    {%if pageno!=1%}
+    <li class="page-item"><a class="page-link " href="{{url_for('post.AllPost',page=pageno-1,pageSize=5)}}">Previous</a></li>
+    {%endif%}
+    {%for i in range(1,(totalPage+1))%}
+    <li class="page-item"><a class="page-link {{active if pageno==i}}" href="{{url_for('post.AllPost',page=i,pageSize=5)}}">{{i}}</a></li>
+    {%endfor%}
+    {%if pageno!=totalPage%}
+    <li class="page-item"><a class="page-link" href="{{url_for('post.AllPost',page=pageno+1,pageSize=5)}}">Next</a></li>
+    {%endif%}
+  </ul>
+<div>
+{%else%}
+<h2 class="text-center">No Post avaliable. Want to Create one?</h2>
+{%endif%}
+{%endblock%}

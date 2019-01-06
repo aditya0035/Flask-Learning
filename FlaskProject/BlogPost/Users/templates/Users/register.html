@@ -1,0 +1,99 @@
+{%extends "index.html"%}
+{%block content%}
+{%if validationError%}
+<div class="alert alert-danger col-sm-12 col-md-10 col-md-offset-1">
+  <ul>
+  {%if get_flashed_messages()%}
+  {%for message in get_flashed_messages()%}
+  <li>{{message}}</li>
+  {%endfor%}
+  {%endif%}
+
+  {%if form.Email.errors%}
+  {%for error in form.Email.errors%}
+  <li>{{error}}</li>
+  {%endfor%}
+  {%endif%}
+  {%if form.Password.errors%}
+  {%for error in form.Password.errors%}
+  <li>{{error}}</li>
+  {%endfor%}
+  {%endif%}
+  {%if form.UserName.errors%}
+  {%for error in form.UserName.errors%}
+  <li>{{error}}</li>
+  {%endfor%}
+  {%endif%}
+  <ul>
+</div>
+{%endif%}
+
+
+<div class="container d-flex p-2">
+  <div class="row">
+    <div class="Absolute-Center is-Responsive">
+      <div id="logo-container"></div>
+      <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <form class="form-horizontal" method="POST">
+            {{form.hidden_tag()}}
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:</label>
+        <div class="col-sm-10">
+          {{form.Email(class="form-control",placeholder="Enter email")}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="UserName">UserName:</label>
+        <div class="col-sm-10">
+          {{form.UserName(class="form-control",placeholder="Enter username")}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="Password">Password:</label>
+        <div class="col-sm-10">
+          {{form.Password(class="form-control",placeholder="Enter password")}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="ConfirmPassword">Confirm Password:</label>
+        <div class="col-sm-10">
+          {{form.ConfirmPassword(class="form-control",placeholder="Confirm password")}}
+        </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-sm-2" for="skills">Skills:</label>
+          <div class="col-sm-10">
+          {{form.Skills(class="form-control")}}
+          </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="profilepic">Profile Picture:</label>
+        <div class="col-sm-10">
+          {{form.Picture(class="form-control")}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="Gender">Gender:</label>
+        <div class="col-sm-10">
+          {{form.Gender(class="radio")}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="feeds">Enable Feeds:</label>
+        <div class="col-sm-10">
+          {{form.Feeds(class="checkbox")}}
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="form-group">
+            {{form.Submit(class="btn btn-md btn-block")}}
+          </div>
+        </div>
+      </div>
+    </form>
+    </div>
+    </div>
+  </div>
+</div>
+{%endblock%}
