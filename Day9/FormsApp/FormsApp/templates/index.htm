@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POST FORM</title>
+</head>
+<body>
+    <a href="{%url 'simpleform'%}">Link to form</a>
+    {%if userdata%}
+    <h1>Below is Users</h1>
+    <table>
+        {%for user in userdata%}
+        <tr>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+    {%endif%}
+</body>
+</html>

@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SimpleForm</title>
+</head>
+<body>
+    <form action="{%url 'simpleform'%}" method="POST">
+        {%csrf_token%}
+        <table>
+            <tr><td><label for="firstName">First Name</label><input type="text" name="firstName" /></td></tr>
+            <tr><td><label for="lastName">Last Name</label><input type="text" name="lastName" /></td></tr>
+            <tr><td colspan='2'><button type="submit">Submit</button></td></tr> 
+        </table>
+    </form>
+</body>
+</html>
